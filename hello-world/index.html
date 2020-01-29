@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+
+    <button id="createNewWin">create new window</button>
+
+    <script>
+      require("./index.js");
+    </script>
+  </body>
+</html>
