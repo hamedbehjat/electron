@@ -7,15 +7,17 @@ function getQuota() {
     .get("https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand")
     .then(res => {
       res = res.data;
-      //console.log("res: ", res);
+      console.log("res: ", res);
 
-      //let number = Math.floor(Math.random() * res.length);
-      //console.log("number: ", number);
+      let number = Math.floor(Math.random() * res.length);
+      console.log("number: ", number);
 
-      let randomQuote = res[0]["content"]["rendered"];
-      console.log("randomQuote: ", randomQuote);
+      let randomQuote = res[number]["content"]["rendered"];
+      // console.log("randomQuote: ", randomQuote);
 
       document.getElementById("quote-holder").innerHTML = randomQuote;
+
+      console.log("done");
     })
     .catch(err => {
       console.log(err.response);
@@ -24,4 +26,4 @@ function getQuota() {
 
 getQuota();
 
-setInterval(getQuota(), 5000);
+setInterval(getQuota, 5000);
